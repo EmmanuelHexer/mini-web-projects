@@ -4,24 +4,19 @@ bodyEl.addEventListener("mousemove", (e) => {
   const xPos = e.offsetX;
   const yPos = e.offsetY;
 
-  spawnHearts(xPos, yPos);
-});
+  const imgEl = document.createElement("img");
+  const randNum = Math.floor(Math.random() * 100);
 
-function spawnHearts(x, y) {
-  const loveIcon = document.createElement("img");
-  const randomNumber = Math.floor(Math.random() * 100);
-  loveIcon.src = "./loveIcon.png";
-  loveIcon.className = "loveIcon";
-  bodyEl.appendChild(loveIcon);
+  imgEl.src = "./loveIcon.png";
+  imgEl.className = "loveIcon";
+  bodyEl.appendChild(imgEl);
 
-  loveIcon.style.left = x + "px";
-  loveIcon.style.top = y + "px";
-  loveIcon.style.width = randomNumber + "px";
-  loveIcon.style.height = randomNumber + "px";
+  imgEl.style.left = xPos + "px";
+  imgEl.style.top = yPos + "px";
+  imgEl.style.width = randNum + "px";
+  imgEl.style.height = randNum + "px";
 
   setTimeout(() => {
-    loveIcon.remove();
-  }, 2000);
-}
-
-console.log("this is working");
+    imgEl.remove();
+  }, 1500);
+});
