@@ -1,22 +1,20 @@
-const bodyEl = document.querySelector("body");
+// tip calculator
 
-bodyEl.addEventListener("mousemove", (e) => {
-  const xPos = e.offsetX;
-  const yPos = e.offsetY;
+let running = false;
+let billAmount = 0;
+let tip = 0;
+let tipRate = 0;
+let total = 0;
 
-  const imgEl = document.createElement("img");
-  const randNum = Math.floor(Math.random() * 100);
-
-  imgEl.src = "./loveIcon.png";
-  imgEl.className = "loveIcon";
-  bodyEl.appendChild(imgEl);
-
-  imgEl.style.left = xPos + "px";
-  imgEl.style.top = yPos + "px";
-  imgEl.style.width = randNum + "px";
-  imgEl.style.height = randNum + "px";
-
-  setTimeout(() => {
-    imgEl.remove();
-  }, 1500);
-});
+while (!running) {
+  billAmount = Number(prompt("What is the bill amount"));
+  tipRate = Number(prompt("What is the tip rate?"));
+  if (billAmount > 0 && tipRate > 0) {
+    tip = Math.ceil(billAmount * (tipRate / 100));
+    total = billAmount + tip;
+    console.log(`Tip: $${tip}`, `Total: $${total}`);
+  } else {
+    break;
+  }
+  break;
+}
