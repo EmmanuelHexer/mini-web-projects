@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./script.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <div class="toast active">
+        <div class="toast-content">
+          <i class="fas fa-solid fa-check check"></i>
+          <div class="message">
+            <span class="text text-1">Success</span>
+            <span class="text text-2">Password Copied</span>
+          </div>
+        </div>
+        <div class="progress active"></div>
+      </div>
+      <h1>Generate a strong password</h1>
+      <div id="passwordContainer">
+        <span id="passwordValue"></span>
+        <button
+          onclick="copyText()"
+          id="copyBtn"
+          title="Copy"
+          style="background: none; border: none; cursor: pointer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path
+              d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div id="errorMessage">
+        !!!Please check at least one option before generating a password.
+      </div>
+
+      <div id="sliderContainer">
+        <input
+          type="range"
+          min="1"
+          max="20"
+          class="slider"
+          id="sliderRange"
+          value="1"
+        />
+        <span id="sliderValue"></span>
+      </div>
+
+      <div id="passwordRequirements">
+        <label>
+          <input type="checkbox" id="uppercase" />Include Uppercase letters (A -
+          Z)
+        </label>
+        <label>
+          <input type="checkbox" id="lowercase" />Include Lowercase letters (a -
+          z)
+        </label>
+        <label>
+          <input type="checkbox" id="numbers" />Include Numbers (0 - 9)
+        </label>
+        <label>
+          <input type="checkbox" id="symbols" />Include Symbols (@ - $)
+        </label>
+        <label>
+          <input type="checkbox" id="duplicate" />Exclude Duplicate Characters
+        </label>
+      </div>
+      <button id="generatePassword" onclick="generatePassword()">
+        GENERATE PASSWORD
+      </button>
+    </div>
+  </body>
+</html>

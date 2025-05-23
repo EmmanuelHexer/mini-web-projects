@@ -1,0 +1,228 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: lightblue;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  font-family: verdana, sans-serif;
+  overflow: hidden;
+}
+
+#container {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin: 1rem;
+}
+
+#container h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+#passwordContainer {
+  background-color: rgb(63, 160, 63);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+#passwordValue {
+  border: none;
+  color: white;
+  font-size: 2rem;
+  margin: 0 auto;
+}
+
+#copyBtn {
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#copyBtn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+#copyBtn:active {
+  background-color: #3e8e41;
+  transform: scale(0.95);
+  box-shadow: none;
+}
+
+#errorMessage {
+  color: #e53e3e;
+  background-color: #fff5f5;
+  border: 1px solid #feb2b2;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  display: none;
+}
+
+#sliderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+#sliderValue {
+  font-size: 1.8rem;
+  margin-right: 2rem;
+}
+
+.slider {
+  width: 100%;
+  max-width: 300px;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+#passwordRequirements {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.8rem;
+  color: #242424;
+}
+
+#passwordRequirements label {
+  margin-bottom: 1.5rem;
+}
+
+#generatePassword {
+  margin-top: 2rem;
+  border: none;
+  background-color: lightblue;
+  padding: 1.5rem;
+  width: 100%;
+  font-size: 1.8rem;
+  border-radius: 5rem;
+  color: #242424;
+  transition: background-color 0.5s;
+}
+
+#generatePassword:hover {
+  background-color: darkblue;
+  color: white;
+}
+
+/* TOAST NOTIFICATIONS  */
+
+.toast {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  border-radius: 12px;
+  background: #fff;
+  padding: 20px 35px 20px 25px;
+  box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transform: translateX(calc(100% + 30px));
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+  display: none;
+}
+
+.toast.active {
+  transform: translateX(0%);
+}
+
+.toast .toast-content {
+  display: flex;
+  align-items: center;
+}
+
+.toast-content .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  min-width: 35px;
+  background-color: #2770ff;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 50%;
+}
+
+.toast-content .message {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+.message .text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #666666;
+}
+
+.message .text.text-1 {
+  font-weight: 600;
+  color: #333;
+}
+
+.toast .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  padding: 5px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.toast .close:hover {
+  opacity: 1;
+}
+
+.toast .progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+}
+
+.toast .progress:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #2770ff;
+}
+
+.progress.active:before {
+  animation: progress 5s linear forwards;
+}
+
+@keyframes progress {
+  100% {
+    right: 100%;
+  }
+}
+
+.toast.active ~ button {
+  pointer-events: none;
+}
