@@ -1,5 +1,23 @@
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+class Product {
+  constructor(name, price) {
+    this.name = name;
+    this.price = price;
+  }
 
-const filteredNumbers = numbers.filter((number) => number % 3 === 0);
+  displayProducts() {
+    console.log(`The name of the product is ${this.name}`);
+    console.log(`The price is $${this.price.toFixed(2)}`);
+  }
 
-console.log(filteredNumbers);
+  calculateTotal(salesTax) {
+    return this.price + this.price * salesTax;
+  }
+}
+
+const salesTax = 0.05;
+
+const product1 = new Product("SSD", 100.0);
+
+product1.displayProducts();
+const total = product1.calculateTotal(salesTax);
+console.log(`The total price of everything is ${total.toFixed(2)}`);
