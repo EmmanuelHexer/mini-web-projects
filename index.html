@@ -2,10 +2,46 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="./script.js" defer></script>
-    <title>Document</title>
+    <title>Mouse Event Tracker</title>
+    <style>
+      body {
+        height: 2000px; /* makes scrolling possible */
+        font-family: sans-serif;
+        padding: 20px;
+      }
+      .output {
+        background: #f0f0f0;
+        border-left: 4px solid #2196f3;
+        padding: 10px;
+        margin-top: 20px;
+        white-space: pre-wrap;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <h1>Click anywhere on the page!</h1>
+    <div class="output" id="output">Click to see coordinates...</div>
+
+    <script>
+      document.addEventListener("click", (e) => {
+        const output = document.getElementById("output");
+        output.textContent = `
+clientX:   ${e.clientX}
+clientY:   ${e.clientY}
+
+pageX:     ${e.pageX}
+pageY:     ${e.pageY}
+
+screenX:   ${e.screenX}
+screenY:   ${e.screenY}
+
+offsetX:   ${e.offsetX}
+offsetY:   ${e.offsetY}
+
+movementX: ${e.movementX}
+movementY: ${e.movementY}
+      `;
+      });
+    </script>
+  </body>
 </html>
