@@ -1,23 +1,25 @@
-class Product {
-  constructor(name, price) {
-    this.name = name;
-    this.price = price;
-  }
+const bodyEl = document.body;
 
-  displayProducts() {
-    console.log(`The name of the product is ${this.name}`);
-    console.log(`The price is $${this.price.toFixed(2)}`);
-  }
+document.addEventListener("DOMContentLoaded", () => {
+  bodyEl.onmousemove = (e) => {
+    const xPos = e.offsetX;
+    const yPos = e.offsetY;
+    const randomNumbers = Math.floor(Math.random() * 100);
 
-  calculateTotal(salesTax) {
-    return this.price + this.price * salesTax;
-  }
-}
+    const imgEl = document.createElement("img");
+    imgEl.src = "https://cdn4.iconfinder.com/data/icons/set-1/32/__1-512.png";
+    imgEl.alt = "love icon";
+    imgEl.id = "loveIcon";
+    bodyEl.appendChild(imgEl);
 
-const salesTax = 0.05;
+    imgEl.style.left = xPos + "px";
+    imgEl.style.top = yPos + "px";
 
-const product1 = new Product("SSD", 100.0);
+    imgEl.style.width = randomNumbers + "px";
+    imgEl.style.height = randomNumbers + "px";
 
-product1.displayProducts();
-const total = product1.calculateTotal(salesTax);
-console.log(`The total price of everything is ${total.toFixed(2)}`);
+    setTimeout(() => {
+      imgEl.remove();
+    }, 1500);
+  };
+});
