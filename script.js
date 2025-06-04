@@ -1,31 +1,27 @@
-const hourEl = document.getElementById("hours");
-const minutesEl = document.getElementById("minutes");
-const secondsEl = document.getElementById("seconds");
-const ampmEl = document.getElementById("ampm");
+const imageContainerEl = document.querySelector(".image-container");
+const btnEl = document.querySelector(".btn");
 
-function updateClock() {
-  let h = new Date().getHours();
-  let m = new Date().getMinutes();
-  let s = new Date().getSeconds();
+btnEl.addEventListener("click", () => {
+  loadMoreImages();
+});
 
-  let ampm = "AM";
+btnEl.addEventListener("mouseover", (e) => {
+  btnAnimation(e);
+});
 
-  if (h > 12) {
-    h = h - 12;
-    ampm = "PM";
+function loadMoreImages() {
+  for (let i = 0; i < 3; i++) {
+    const newImages = document.createElement("img");
+    const randomImages = Math.floor(Math.random() * 997 - 3);
+    newImages.src = `https://picsum.photos/300?random=${randomImages}`;
+    imageContainerEl.appendChild(newImages);
   }
-
-  h = h < 10 ? "0" + h : h;
-  m = m < 10 ? "0" + m : m;
-  s = s < 10 ? "0" + s : s;
-
-  hourEl.innerText = h;
-  minutesEl.innerText = m;
-  secondsEl.innerText = s;
-  ampmEl.innerText = ampm;
-  setTimeout(() => {
-    updateClock();
-  }, 1000);
 }
 
-updateClock();
+function btnAnimation(e) {
+  const xPos = e.pageX - btnEl.offsetLeft;
+  const yPos = e.pageY - btnEl.offsetTop;
+
+  btnEl.style.setProperty("--xPos", xPos + "px");
+  btnEl.style.setProperty("--yPos", yPos + "px");
+}
