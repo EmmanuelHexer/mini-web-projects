@@ -31,22 +31,17 @@ const usernameEl = document.querySelector(".username");
 
 let idx = 0;
 
-function updateTestimonials() {
+function updateSlider() {
   const { username, text, photoUrl } = testimonials[idx];
-
-  imgEl.src = photoUrl;
+  usernameEl.innerText = username;
   textEl.innerText = text;
-  username.innerText = username;
-
+  imgEl.src = photoUrl;
   idx++;
 
   if (idx === testimonials.length) {
     idx = 0;
   }
-
-  setTimeout(() => {
-    updateTestimonials();
-  }, 1500);
+  setTimeout(updateSlider, 1000);
 }
 
-updateTestimonials();
+updateSlider();

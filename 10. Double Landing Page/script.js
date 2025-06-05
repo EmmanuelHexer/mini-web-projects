@@ -2,18 +2,15 @@ const containerEl = document.querySelector(".container");
 const leftEl = document.querySelector(".left");
 const rightEl = document.querySelector(".right");
 
-leftEl.addEventListener("mouseover", () => {
-  containerEl.classList.add("active-left");
-});
+function splitElements(element, className) {
+  element.addEventListener("mouseover", () => {
+    containerEl.classList.add(className);
+  });
 
-leftEl.addEventListener("mouseleave", () => {
-  containerEl.classList.remove("active-left");
-});
+  element.addEventListener("mouseleave", () => {
+    containerEl.classList.remove(className);
+  });
+}
 
-rightEl.addEventListener("mouseover", () => {
-  containerEl.classList.add("active-right");
-});
-
-rightEl.addEventListener("mouseleave", () => {
-  containerEl.classList.remove("active-right");
-});
+splitElements(leftEl, "active-left");
+splitElements(rightEl, "active-right");

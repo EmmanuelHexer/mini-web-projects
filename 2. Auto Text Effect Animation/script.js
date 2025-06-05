@@ -1,27 +1,24 @@
 const containerEl = document.querySelector(".container");
 
-const careers = ["Programmer", "Youtuber", "Philanthropist"];
+const careers = ["Programmer", "Engineer", "Typist", "Pianist", "Actor"];
 let careerIndex = 0;
 let characterIndex = 0;
 
-updateText();
-
-function updateText() {
+function updateCareers() {
   characterIndex++;
   containerEl.innerHTML = `
   <h1>I am a ${careers[careerIndex].slice(0, characterIndex)}</h1>
   `;
-  setTimeout(() => {
-    updateText();
-  }, 400);
-
   if (characterIndex === careers[careerIndex].length) {
-    careerIndex++;
     characterIndex = 0;
+    careerIndex++;
   }
 
   if (careerIndex === careers.length) {
-    careerIndex = 0;
     characterIndex = 0;
+    careerIndex = 0;
   }
+  setTimeout(updateCareers, 400);
 }
+
+updateCareers();
