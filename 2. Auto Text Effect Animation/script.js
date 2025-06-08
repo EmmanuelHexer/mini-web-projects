@@ -1,24 +1,33 @@
 const containerEl = document.querySelector(".container");
 
-const careers = ["Programmer", "Engineer", "Typist", "Pianist", "Actor"];
+const careers = [
+  "Tedua Hene",
+  "Pharmacist",
+  "Medicine Seller",
+  "Programmer",
+  "Producer",
+];
+
 let careerIndex = 0;
 let characterIndex = 0;
 
-function updateCareers() {
+function careerAnimation() {
   characterIndex++;
   containerEl.innerHTML = `
-  <h1>I am a ${careers[careerIndex].slice(0, characterIndex)}</h1>
+   <h1>I am a ${careers[careerIndex].slice(0, characterIndex)}</h1>
   `;
+
   if (characterIndex === careers[careerIndex].length) {
-    characterIndex = 0;
     careerIndex++;
+    characterIndex = 0;
   }
 
   if (careerIndex === careers.length) {
-    characterIndex = 0;
     careerIndex = 0;
+    characterIndex = 0;
   }
-  setTimeout(updateCareers, 400);
+
+  setTimeout(careerAnimation, 400);
 }
 
-updateCareers();
+careerAnimation();

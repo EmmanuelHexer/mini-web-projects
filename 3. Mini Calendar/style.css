@@ -4,42 +4,37 @@ body {
   justify-content: center;
   height: 100vh;
   align-items: center;
+  background: lightblue;
   font-family: cursive;
-  background-color: slateblue;
 }
 
-.calendar-container {
+.container {
   background-color: white;
-  width: 300px;
-  text-align: center;
+  width: 350px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   overflow: hidden;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
 
-.month-name {
-  margin: 0;
+#month-name {
+  padding: 15px;
   background-color: orangered;
   color: white;
-  padding: 10px;
   font-size: 30px;
-  font-weight: bold;
 }
 
-.day-name {
-  font-size: 20px;
-  color: darkgrey;
+#day-name {
+  padding: 15px;
+  font-size: 17px;
 }
 
-.day-number {
-  font-size: 80px;
-  margin: 0;
-  font-weight: bold;
+#day-num {
+  font-size: 75px;
+  padding: 10px;
 }
 
-.year {
-  margin: 20px 0;
-  font-size: 20px;
-  color: darkgrey;
-  font-weight: 500;
+#year {
+  font-size: 17px;
+  padding: 15px;
 }
