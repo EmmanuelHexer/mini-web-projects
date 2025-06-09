@@ -4,9 +4,10 @@ const secondsEl = document.getElementById("seconds");
 const ampmEl = document.getElementById("ampm");
 
 function updateTime() {
-  let h = new Date().getHours();
-  let m = new Date().getMinutes();
-  let s = new Date().getSeconds();
+  const date = new Date();
+  let h = date.getHours();
+  let m = date.getMinutes();
+  let s = date.getSeconds();
   let ampm = "AM";
 
   if (h > 12) {
@@ -21,8 +22,6 @@ function updateTime() {
   hoursEl.innerText = h;
   minutesEl.innerText = m;
   secondsEl.innerText = s;
-  ampmEl.innerText = ampm;
-
   setTimeout(updateTime, 1000);
 }
 

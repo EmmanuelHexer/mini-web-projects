@@ -21,6 +21,6 @@ body {
   }
   100% {
     transform: translate(-50%, -5000%);
-    filter: hue-rotate(640deg);
+    filter: hue-rotate(740deg);
   }
 }
