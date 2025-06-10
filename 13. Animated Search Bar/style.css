@@ -19,7 +19,7 @@ body {
     -12px -12px 20px rgba(255, 255, 255, 0.7);
   margin: 10px;
   position: absolute;
-  transition: width 1.5s;
+  transition: width 1.4s;
 }
 
 .magnifier {
