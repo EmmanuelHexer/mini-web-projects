@@ -3,11 +3,11 @@ const hourEl = document.getElementById("hour");
 const minuteEl = document.getElementById("minute");
 const secondEl = document.getElementById("second");
 
-let newYearTime = new Date("Jan 1, 2026 00:00:00").getTime();
+const newYearTime = new Date("Jan 1, 2026 00:00:00").getTime();
 
-countDown();
+countdown();
 
-function countDown() {
+function countdown() {
   const now = new Date().getTime();
   const gap = newYearTime - now;
 
@@ -25,5 +25,5 @@ function countDown() {
   hourEl.innerText = h;
   minuteEl.innerText = m;
   secondEl.innerText = s;
-  setTimeout(countDown, 1000);
+  setTimeout(countdown, 1000);
 }
