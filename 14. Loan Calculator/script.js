@@ -1,17 +1,11 @@
 function calculateLoan() {
-  const loanAmountValue = document.getElementById("loan-amount").value;
-  const interestRateValue = document.getElementById("interest-rate").value;
-  const monthsToPayValue = document.getElementById("months-to-pay").value;
+  const loanAmountEl = document.getElementById("loan-amount").value;
+  const interestRateEl = document.getElementById("interest-rate").value;
+  const monthsToPayEl = document.getElementById("months-to-pay").value;
+  const paymentEl = document.getElementById("payment");
+  const interest = (loanAmountEl * interestRateEl * 0.01) / monthsToPayEl;
 
-  const interest =
-    (loanAmountValue * (interestRateValue * 0.01)) / monthsToPayValue;
+  const monthlyPayment = loanAmountEl / (monthsToPayEl + interest);
 
-  const monthlyPayment = (
-    loanAmountValue / monthsToPayValue +
-    interest
-  ).toFixed(2);
-
-  document.getElementById("payment").innerHTML = `
-   Monthly Payment: ${monthlyPayment}
-  `;
+  paymentEl.innerHTML = `Monthly Payment: ${monthlyPayment.toFixed(2)}`;
 }

@@ -4,11 +4,11 @@ const resetEl = document.getElementById("reset");
 const timerEl = document.getElementById("timer");
 
 let interval;
-let timeLeft = 10;
+let timeLeft = 5;
 
 function updateTimer() {
-  let minutes = Math.floor(timeLeft / 60);
-  let seconds = timeLeft % 60;
+  const minutes = Math.floor(timeLeft / 60);
+  const seconds = timeLeft % 60;
 
   let formattedTime = `${minutes.toString().padStart(2, "0")}:${seconds
     .toString()
@@ -17,15 +17,14 @@ function updateTimer() {
 }
 
 function startTimer() {
-  clearInterval(interval);
   interval = setInterval(() => {
     timeLeft--;
     updateTimer();
     if (timeLeft === 0) {
-      alert("Yo bro, Times up!");
+      alert("Bro time is up!");
+      clearInterval(interval);
       timeLeft = 1500;
       updateTimer();
-      clearInterval(interval);
     }
   }, 1000);
 }
