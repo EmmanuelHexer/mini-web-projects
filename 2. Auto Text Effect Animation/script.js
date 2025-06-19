@@ -7,9 +7,10 @@ const careers = [
   "Gamer",
   "Musician",
 ];
-
 let careerIndex = 0;
 let characterIndex = 0;
+
+updateText();
 
 function updateText() {
   characterIndex++;
@@ -29,5 +30,3 @@ function updateText() {
 
   setTimeout(updateText, 400);
 }
-
-updateText();

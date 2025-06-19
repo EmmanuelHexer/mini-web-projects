@@ -1,9 +1,9 @@
-const hoursEl = document.getElementById("hours");
+const hourEl = document.getElementById("hours");
 const minutesEl = document.getElementById("minutes");
 const secondsEl = document.getElementById("seconds");
 const ampmEl = document.getElementById("ampm");
 
-function updateTime() {
+function updateClock() {
   const date = new Date();
   let h = date.getHours();
   let m = date.getMinutes();
@@ -19,10 +19,12 @@ function updateTime() {
   m = m < 10 ? "0" + m : m;
   s = s < 10 ? "0" + s : s;
 
-  hoursEl.innerText = h;
+  hourEl.innerText = h;
   minutesEl.innerText = m;
   secondsEl.innerText = s;
-  setTimeout(updateTime, 1000);
+  ampmEl.innerText = ampm;
+
+  setTimeout(updateClock, 1000);
 }
 
-updateTime();
+updateClock();

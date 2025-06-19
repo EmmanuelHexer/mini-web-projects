@@ -2,7 +2,7 @@ const containerEl = document.querySelector(".container");
 const leftEl = document.querySelector(".left");
 const rightEl = document.querySelector(".right");
 
-function splitElements(element, className) {
+function addAnimations(element, className) {
   element.addEventListener("mouseover", () => {
     containerEl.classList.add(className);
   });
@@ -12,5 +12,5 @@ function splitElements(element, className) {
   });
 }
 
-splitElements(leftEl, "active-left");
-splitElements(rightEl, "active-right");
+addAnimations(leftEl, "active-left");
+addAnimations(rightEl, "active-right");

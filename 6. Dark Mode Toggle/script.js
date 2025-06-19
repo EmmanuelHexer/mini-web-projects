@@ -1,7 +1,11 @@
-const bodyEl = document.body;
 const inputEl = document.getElementById("dark-mode");
+const bodyEl = document.body;
 
-function toggleBody() {
+inputEl.checked = JSON.parse(localStorage.getItem("mode"));
+
+toggleTheme();
+
+function toggleTheme() {
   if (inputEl.checked) {
     bodyEl.style.background = "black";
   } else {
@@ -10,7 +14,9 @@ function toggleBody() {
 }
 
 inputEl.addEventListener("input", () => {
-  toggleBody();
+  toggleTheme();
 });
 
-toggleBody();
+function saveToLocalStorage() {
+  localStorage.setItem("mode", JSON.stringify(inputEl.checked));
+}

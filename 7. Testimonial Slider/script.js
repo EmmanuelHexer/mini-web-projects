@@ -25,7 +25,7 @@ const testimonials = [
   },
 ];
 
-const imgEl = document.querySelector("img");
+const imageEl = document.querySelector("img");
 const textEl = document.querySelector(".text");
 const usernameEl = document.querySelector(".username");
 
@@ -33,14 +33,15 @@ let idx = 0;
 
 function updateSlider() {
   const { username, text, photoUrl } = testimonials[idx];
-  usernameEl.innerText = username;
+  imageEl.src = photoUrl;
   textEl.innerText = text;
-  imgEl.src = photoUrl;
+  usernameEl.innerText = username;
   idx++;
 
   if (idx === testimonials.length) {
     idx = 0;
   }
+
   setTimeout(updateSlider, 1000);
 }
 

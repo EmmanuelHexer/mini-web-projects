@@ -2,8 +2,7 @@ const monthNameEl = document.getElementById("month-name");
 const dayNameEl = document.getElementById("day-name");
 const dayNumEl = document.getElementById("day-num");
 const yearEl = document.getElementById("year");
-
-function currentDate() {
+function newDate() {
   const date = new Date();
 
   monthNameEl.innerText = date.toLocaleString("en", {
@@ -15,8 +14,7 @@ function currentDate() {
   });
 
   dayNumEl.innerText = date.getDate();
-
   yearEl.innerText = date.getFullYear();
 }
 
-currentDate();
+newDate();
